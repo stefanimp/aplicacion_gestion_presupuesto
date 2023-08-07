@@ -1,0 +1,3 @@
+C:/Users/stefan/Desktop/Personal/Proyectos_C++/Control_De_Presupuesto/cmake-build-debug/CMakeFiles/Control_De_Gastos.dir
+C:/Users/stefan/Desktop/Personal/Proyectos_C++/Control_De_Presupuesto/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/stefan/Desktop/Personal/Proyectos_C++/Control_De_Presupuesto/cmake-build-debug/CMakeFiles/rebuild_cache.dir
