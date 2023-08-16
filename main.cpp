@@ -12,5 +12,8 @@ int main() {
 
     std::cout<<fecha_defecha1->getAgno();
 
+    delete fecha_defecha1;
+    fecha_defecha1 = nullptr;
+
     return 0;
 }
