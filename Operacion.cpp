@@ -51,3 +51,11 @@ float Operacion::getCantMonetaria() const {
 Categoria *Operacion::getTipo() const {
     return tipo;
 }
+
+std::string Operacion::toCSV() const {
+
+}
+
+void Operacion::fromCSV(std::string &cadena) {
+
+}

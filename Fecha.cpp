@@ -49,3 +49,65 @@ Fecha::Fecha(int dia, int mes, int agno):dia(dia), mes(mes), agno(agno) {
     std::string dias_semana[] = {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"};
     this->dia_semana = dias_semana[dia_semana_numero];
 }
+
+Fecha::~Fecha() {
+
+}
+
+void Fecha::setDia(int dia) {
+    this->dia = dia;
+}
+
+void Fecha::setMes(int mes) {
+    this->mes = mes;
+}
+
+void Fecha::setAgno(int agno) {
+    this->agno = agno;
+}
+
+void Fecha::setDiaSemanna(std::string dia_semana) {
+    this->dia_semana = dia_semana;
+}
+
+int Fecha::getDia() const {
+    return dia;
+}
+
+int Fecha::getMes() const {
+    return mes;
+}
+
+int Fecha::getAgno() const {
+    return agno;
+}
+
+std::string Fecha::getDiaSemana() const {
+    return dia_semana;
+}
+
+std::string Fecha::toCSV() const {
+    std::stringstream aux;
+    aux<<dia <<";"
+    <<mes <<";"
+    <<agno <<";"
+    <<dia_semana <<";"
+    <<num_operaciones <<";";
+    for (int i = 0; i < num_operaciones; ++i) {
+        aux<<operaciones[i]->toCSV() <<";";
+    }
+
+    return aux.str();
+}
+
+void Fecha::fromCSV(std::string &cadena) {
+    std::stringstream ss(cadena);
+    ss>>dia;
+    ss.ignore( );
+    ss>>mes;
+    ss.ignore( );
+    ss>>agno;
+    ss.ignore( );
+    std::getline(ss, dia_semana, ';');
+    ss>>num_operaciones;
+}

@@ -28,6 +28,9 @@ public:
     float getCantMonetaria() const;
     std::string getDescripcion() const;
     Categoria* getTipo() const;
+    //Otros métodos
+    std::string toCSV() const;
+    void fromCSV(std::string &cadena);
 
 };
 
