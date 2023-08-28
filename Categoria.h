@@ -8,6 +8,8 @@
 #ifndef CONTROL_DE_GASTOS_CATEGORIA_H
 #define CONTROL_DE_GASTOS_CATEGORIA_H
 
+#include "sstream"
+
 class Categoria{
 private:
     std::string nombre = "";
@@ -21,7 +23,13 @@ public:
     void setNombre(std::string nombre);
     void setDescripcion(std::string descripcion);
     virtual std::string getNombre() const = 0;
-    std::string getDescripcion();
+    std::string getDescripcion() const;
+
+    const int CANTIDAD_CATEGORIAS = 2;
+    const std::string *TIPOS = new std::string ("Gasto","Ingreso");
+    //Otros métodos
+    virtual std::string toCSV() const;
+    void fromCSV(std::string &cadena);
 
 };
 

@@ -34,6 +34,26 @@ std::string Categoria::getNombre() const {
     return nombre;
 }
 
-std::string Categoria::getDescripcion() {
+std::string Categoria::getDescripcion() const {
     return descripcion;
+}
+
+std::string Categoria::toCSV() const {
+    std::stringstream aux;
+
+    aux<<this->getNombre() <<';'
+       <<Categoria::getDescripcion() <<';';
+
+    // debe devolver un string con el formato Categoria;Nombre;Descripcion;
+    return aux.str();
+}
+
+//Recibe strings con el formato //Gategoria;Nombre;Descripcion;
+void Categoria::fromCSV(std::string &cadena) {
+    std::stringstream ss(cadena);
+    std::string tipo;
+    // Esta función es comun para todos las tipos de categorías pero es el mainel que debe coger la cedena y ver de que tipo son para poder crear el objeto.
+    std::getline(ss,tipo,';');
+    std::getline(ss, nombre, ';');
+    std::getline(ss, descripcion, ';');
 }

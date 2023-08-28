@@ -12,5 +12,7 @@ Ingreso::~Ingreso() noexcept {
 }
 
 std::string Ingreso::getNombre() const {
-    return "Ingreso:" + Categoria::getNombre();
+    return Categoria::TIPOS[1] + ';' + Categoria::getNombre();
 }
+
+

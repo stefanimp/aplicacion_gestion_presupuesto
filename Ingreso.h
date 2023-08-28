@@ -13,8 +13,8 @@ public:
     Ingreso(std::string nombre, std::string descripcion);
     Ingreso(const Ingreso &original);
     virtual ~Ingreso();
-    //Getters y settres
-    virtual std::string getNombre() const override;
+    //Getters y Setters
+    std::string getNombre() const override;
 };
 
 #endif //CONTROL_DE_GASTOS_INGRESO_H

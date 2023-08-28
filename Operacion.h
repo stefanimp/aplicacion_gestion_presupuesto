@@ -5,7 +5,14 @@
 #ifndef CONTROL_DE_GASTOS_OPERACION_H
 #define CONTROL_DE_GASTOS_OPERACION_H
 
+#include "EmptyCategory.h"
+#include <exception>
 #include "Categoria.h"
+#include "Gasto.h"
+#include "Ingreso.h"
+#include "string"
+#include "iostream"
+#include "sstream"
 
 class Operacion{
 private:
@@ -30,7 +37,7 @@ public:
     Categoria* getTipo() const;
     //Otros métodos
     std::string toCSV() const;
-    void fromCSV(std::string &cadena);
+    void fromCSV(std::string &cadena, Categoria **tipos, int cantidad_tipos);
 
 };
 

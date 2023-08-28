@@ -85,6 +85,12 @@ build CMakeFiles/Control_De_Gastos.dir/Ingreso.cpp.obj: CXX_COMPILER__Control_De
   OBJECT_DIR = CMakeFiles\Control_De_Gastos.dir
   OBJECT_FILE_DIR = CMakeFiles\Control_De_Gastos.dir
 
+build CMakeFiles/Control_De_Gastos.dir/EmptyCategory.cpp.obj: CXX_COMPILER__Control_De_Gastos_Debug C$:/Users/stefan/Desktop/Personal/Proyectos_C++/Control_De_Presupuesto/EmptyCategory.cpp || cmake_object_order_depends_target_Control_De_Gastos
+  DEP_FILE = CMakeFiles\Control_De_Gastos.dir\EmptyCategory.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Control_De_Gastos.dir
+  OBJECT_FILE_DIR = CMakeFiles\Control_De_Gastos.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Control_De_Gastos
@@ -93,7 +99,7 @@ build CMakeFiles/Control_De_Gastos.dir/Ingreso.cpp.obj: CXX_COMPILER__Control_De
 #############################################
 # Link the executable Control_De_Gastos.exe
 
-build Control_De_Gastos.exe: CXX_EXECUTABLE_LINKER__Control_De_Gastos_Debug CMakeFiles/Control_De_Gastos.dir/main.cpp.obj CMakeFiles/Control_De_Gastos.dir/Categoria.cpp.obj CMakeFiles/Control_De_Gastos.dir/Gasto.cpp.obj CMakeFiles/Control_De_Gastos.dir/Fecha.cpp.obj CMakeFiles/Control_De_Gastos.dir/Operacion.cpp.obj CMakeFiles/Control_De_Gastos.dir/Ingreso.cpp.obj
+build Control_De_Gastos.exe: CXX_EXECUTABLE_LINKER__Control_De_Gastos_Debug CMakeFiles/Control_De_Gastos.dir/main.cpp.obj CMakeFiles/Control_De_Gastos.dir/Categoria.cpp.obj CMakeFiles/Control_De_Gastos.dir/Gasto.cpp.obj CMakeFiles/Control_De_Gastos.dir/Fecha.cpp.obj CMakeFiles/Control_De_Gastos.dir/Operacion.cpp.obj CMakeFiles/Control_De_Gastos.dir/Ingreso.cpp.obj CMakeFiles/Control_De_Gastos.dir/EmptyCategory.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Control_De_Gastos.dir

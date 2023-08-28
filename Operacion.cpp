@@ -53,9 +53,40 @@ Categoria *Operacion::getTipo() const {
 }
 
 std::string Operacion::toCSV() const {
+    if(tipo == nullptr){        //TODO manejar esta excepción en el main con un dynamic cast indicando que si aparece una excepción de este tipo, dicha operación se debe detruir y no aparecer más en el fichaero donde se guarden las operacioens
+        throw EmptyCategory();
+    }
+
+    std::stringstream aux;
+
+    aux<<nombre <<";"
+    <<cantidad_monetaria <<";"
+    <<descripcion <<";"
+    <<tipo->getNombre() <<";";
+
+    return aux.str();
 
 }
 
-void Operacion::fromCSV(std::string &cadena) {
+void Operacion::fromCSV(std::string &cadena, Categoria **tipos, int cantidad_tipos) {
+    std::stringstream ss(cadena);
+    std::string categoria;
+    std::string nombre_operacion;
 
+    std::getline(ss,nombre,';');
+    ss>>cantidad_monetaria;
+    ss.ignore( );
+    std::getline(ss, descripcion, ';');
+    std::getline(ss,categoria,';');
+    std::getline(ss, nombre_operacion, ';');
+    std::string tipo_categoria = categoria + ';' + nombre_operacion;
+
+    //TODO usar mejor un ciclo while y añadir un error si no detecta ninguna categoría
+    for (int i = 0; i < cantidad_tipos; ++i) {
+        if (tipo_categoria == tipos[i]->getNombre()){
+            tipo = tipos[i];        //TODO comprobar si está bien el algoritmo y que se refencia bien la dirección de memoria
+        }
+    }
+
+    std::cout<< ss.str();
 }

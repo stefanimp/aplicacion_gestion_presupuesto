@@ -51,7 +51,13 @@ Fecha::Fecha(int dia, int mes, int agno):dia(dia), mes(mes), agno(agno) {
 }
 
 Fecha::~Fecha() {
+    for (int i = 0; i < num_operaciones; ++i) {
+        delete operaciones[i];
+        operaciones[i] = nullptr;
 
+    }
+    delete [] operaciones;
+    operaciones = nullptr;
 }
 
 void Fecha::setDia(int dia) {
@@ -102,6 +108,7 @@ std::string Fecha::toCSV() const {
 
 void Fecha::fromCSV(std::string &cadena) {
     std::stringstream ss(cadena);
+
     ss>>dia;
     ss.ignore( );
     ss>>mes;
@@ -110,4 +117,5 @@ void Fecha::fromCSV(std::string &cadena) {
     ss.ignore( );
     std::getline(ss, dia_semana, ';');
     ss>>num_operaciones;
+    // @todo implemmentar que la fecha cree las operaciones comprobando de que tipo son con un dynamic cast
 }

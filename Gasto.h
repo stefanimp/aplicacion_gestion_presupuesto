@@ -13,8 +13,8 @@ public:
     Gasto() = default;
     Gasto(std::string nombre, std::string descripcion);
     virtual ~Gasto();
-    //Getters y setters
-    virtual std::string getNombre() const override;
+    //Getters y Setters
+    std::string getNombre() const override;
 
 };
 

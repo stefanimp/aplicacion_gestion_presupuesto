@@ -12,5 +12,5 @@ Gasto::~Gasto() noexcept {
 }
 
 std::string Gasto::getNombre() const {
-    return "Gasto:" + Categoria::getNombre();
+    return Categoria::TIPOS[0] + ';' + Categoria::getNombre();
 }
