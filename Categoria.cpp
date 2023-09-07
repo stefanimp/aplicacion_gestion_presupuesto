@@ -16,23 +16,19 @@
  * @param[in]descripcion  descripción de la categoría que se creará
  * @pre     El nombre y la descripción no pueden estar vacíos
  * @post    Manda la parte del objeto Categoria al constructor que lo esté llamando
+ * @warning La excepción debe capturarse posteriormente
  * @throws  std::invalid_argument si el nombre está vacío
  * @throws  std::invalid_argument si la descripción está vacía
  * */
 Categoria::Categoria(std::string nombre, std::string descripcion):nombre(nombre), descripcion(descripcion)
 {
-    try{
-        if (nombre==""){
-            throw std::invalid_argument("Categoria::Categoria, Error, El nombre no puede estar vacio.");
-        }
-        if (descripcion==""){
-            throw std::invalid_argument("Categoria::Categoria, Error, La descripcion no puede estar vacia.");
-        }
-
-    } catch (std::invalid_argument &e){
-        std::cout<<e.what() <<std::endl;
+    if (nombre==""){
+        throw std::invalid_argument("Categoria::Categoria, Error, El nombre no puede estar vacio.");
     }
-}
+    if (descripcion==""){
+        throw std::invalid_argument("Categoria::Categoria, Error, La descripcion no puede estar vacia.");
+    }
+}   //TODO al construir los objetos debemos comprobar en el la region donde se construyan que no hay excepciones, si se lanza alguna excepcion, debemos liberar la memoria de donde se ha lanzado y ocuparlo con un objeto nuevo.
 
 /**
  * @brief   Destructor de la clase Categoria

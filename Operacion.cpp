@@ -3,17 +3,18 @@
 //
 #include "Operacion.h"
 
+/**
+ * @brief   Constructor parametrizado de la clase Operacion
+ *
+ * */
 Operacion::Operacion(std::string nombre, float cantidad_monetaria, std::string descripcion, Categoria *tipo):nombre(nombre), descripcion(descripcion),cantidad_monetaria(cantidad_monetaria), tipo(tipo) {
-    try{
-        if(nombre == ""){
-            throw std::invalid_argument("Operacion::Operacion, Error, el nombre de la operacion no puede estar vacio.");
-        }
-        if(descripcion == ""){
-            throw std::invalid_argument("Operacion::Operacion, Error, el nombre de la operacion no puede estar vacio");
-        }
-    }catch (std::invalid_argument &e){
-        std::cout<<e.what() <<std::endl;
+    if(nombre == ""){
+        throw std::invalid_argument("Operacion::Operacion, Error, el nombre de la operacion no puede estar vacio.");
     }
+    if(descripcion == ""){
+        throw std::invalid_argument("Operacion::Operacion, Error, el nombre de la operacion no puede estar vacio");
+    }
+    //TODO al construir los objetos debemos comprobar en el la region donde se construyan que no hay excepciones, si se lanza alguna excepcion, debemos liberar la memoria de donde se ha lanzado y ocuparlo con un objeto nuevo.
 }
 
 Operacion::~Operacion() {
