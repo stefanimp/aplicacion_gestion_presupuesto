@@ -117,5 +117,9 @@ void Fecha::fromCSV(std::string &cadena) {
     ss.ignore( );
     std::getline(ss, dia_semana, ';');
     ss>>num_operaciones;
-    // @todo implemmentar que la fecha cree las operaciones comprobando de que tipo son con un dynamic cast
+    //TODO completar el bucle. Este algoritmo funcionará de la siguiente manera: en el main cogeremos un archivo CSV y cadda linea será una fecha(hay un ejemplo de esto en la prática 7), a partir de esta linea creamos las fechas, que se almacenarán en un vector de fechas.
+    for (int i = 0; i < num_operaciones; ++i) {
+
+    }
+    // @todo implemmentar que la fecha cree las operaciones
 }

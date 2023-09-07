@@ -1,7 +1,15 @@
+/**
+ * @brief Aplicación de control de gastos
+ * @file main.cpp
+ * @author Stefan Giovanni Imperato Lozano
+ * @version 1.0
+ * */
+
 #include <iostream>
 #include "Fecha.h"
 #include "string"
 
+//TODO al crear los objetos de tipo categoría para cargar desde el archivo csv, ir dando nombre y descripcion a estos en función de su posición, ppor si falla algun al hacer el método fromCSV que sea facil de reconocer cual es.
 
 int main() {
 

@@ -81,11 +81,13 @@ void Operacion::fromCSV(std::string &cadena, Categoria **tipos, int cantidad_tip
     std::getline(ss, nombre_operacion, ';');
     std::string tipo_categoria = categoria + ';' + nombre_operacion;
 
-    //TODO usar mejor un ciclo while y añadir un error si no detecta ninguna categoría
     for (int i = 0; i < cantidad_tipos; ++i) {
         if (tipo_categoria == tipos[i]->getNombre()){
             tipo = tipos[i];        //TODO comprobar si está bien el algoritmo y que se refencia bien la dirección de memoria
         }
+    }
+    if(tipo = nullptr){ //TODO manejar esta excepción en el main
+        throw std::invalid_argument("Operacion::fromCSV, Error, no se ha encontrado el tipo de operacion.");
     }
 
     std::cout<< ss.str();
