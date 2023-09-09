@@ -1,4 +1,4 @@
-This project is made by a first year computer engineering student.
+This project is made by a first-year computer engineering student, without having yet studied data structures or algorithm design.
 
 Still in developmet.
 
